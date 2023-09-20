@@ -163,7 +163,7 @@ object Token {
   @fixed("\r") class CR extends AtEOL
   @fixed("\n") class LF extends EOL
   @fixed("\f") class FF extends EOL
-  @freeform("comment") class Comment(value: String) extends Trivia
+  @freeform("comment") class Comment(value: String, isSingleLine: Boolean) extends Trivia
   @freeform("beginning of file") class BOF extends AtEOLorF {
     def this(input: Input, dialect: Dialect) = this(input, dialect, 0)
     def end = start
